@@ -3,15 +3,19 @@
 client_id = "5a495416cbe36c53c94384fd7adb41d6"
 name = "discount-functions"
 handle = "discount-functions-1"
-application_url = "https://example.com/"
+application_url = "https://costumes-assess-ht-sell.trycloudflare.com"
 embedded = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products,write_discounts"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://costumes-assess-ht-sell.trycloudflare.com/auth/callback",
+  "https://costumes-assess-ht-sell.trycloudflare.com/auth/shopify/callback",
+  "https://costumes-assess-ht-sell.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-10"
@@ -22,3 +26,8 @@ api_version = "2024-10"
 
 [pos]
 embedded = false
+
+[build]
+dev_store_url = "smicius-test-store.myshopify.com"
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
